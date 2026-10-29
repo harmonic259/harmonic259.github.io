@@ -1,59 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formalizing Math with Lean & LLMs</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammad Amin Shabannia – Resume</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #1b2430;
+    --muted: #5b6676;
+    --accent: #00367b;
+    --rule: #d5dbe5;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12171f;
+      --ink: #e6eaf0;
+      --muted: #9aa5b5;
+      --accent: #7fb0f5;
+      --rule: #2b3442;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.55 "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .page { max-width: 880px; margin: 0 auto; padding: 48px 28px 64px; }
+
+  header { margin-bottom: 28px; }
+  h1 {
+    margin: 0 0 6px;
+    font-size: 2.4rem;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--accent);
+  }
+  .contact { margin: 0; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 20px; }
+
+  /* Each section: label column on the left, content on the right */
+  section {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 6px 28px;
+    padding: 20px 0;
+    border-top: 1px solid var(--rule);
+  }
+  h2 { margin: 0; font-size: 1rem; font-weight: 700; color: var(--accent); }
+
+  .entry + .entry { margin-top: 16px; }
+  .entry-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .entry-title { font-weight: 650; }
+  .entry-date { color: var(--muted); white-space: nowrap; }
+  .entry-sub { color: var(--muted); font-style: italic; }
+
+  ul { margin: 6px 0 0; padding-left: 1.1em; }
+  li + li { margin-top: 3px; }
+  .links { display: inline-flex; flex-wrap: wrap; gap: 0 14px; margin-left: 8px; }
+
+  dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 4px 24px; }
+  dt { font-weight: 650; }
+  dd { margin: 0; }
+
+  p { margin: 0; }
+
+  @media (max-width: 640px) {
+    .page { padding: 28px 18px 48px; }
+    section { grid-template-columns: 1fr; }
+    h1 { font-size: 1.9rem; }
+  }
+
+  @media print {
+    :root { --bg: #fff; --ink: #1b2430; --muted: #5b6676; --accent: #00367b; --rule: #d5dbe5; }
+    body { font-size: 11.5px; line-height: 1.45; }
+    .page { max-width: none; padding: 0; }
+    section { padding: 10px 0; break-inside: avoid; }
+    @page { size: A4; margin: 14mm; }
+  }
+</style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-  <header class="bg-white shadow-md">
-    <div class="max-w-4xl mx-auto px-6 py-6 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-blue-600">Formalizing Mathematics</h1>
-    </div>
+<body>
+<main class="page">
+
+  <header>
+    <h1>Mohammad Amin Shabannia</h1>
+    <p class="contact">
+      <span>Tehran, Iran</span>
+      <a href="mailto:amin.shabani259@gmail.com">amin.shabani259@gmail.com</a>
+      <a href="tel:+989032604312">(+98) 903-260-4312</a>
+      <a href="https://www.linkedin.com/in/mohammad-amin-shabannia-02b21828a/">LinkedIn</a>
+      <a href="https://github.com/harmonic259">GitHub</a>
+    </p>
   </header>
 
-  <main class="max-w-4xl mx-auto px-6 py-12">
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-4 text-gray-700">The Vision</h2>
-      <p class="text-lg leading-relaxed">
-        This project aims to bridge rigorous mathematical formalization with the reasoning power of large language models.
-        We use <strong>Lean</strong>, a powerful interactive theorem prover, to formalize mathematical structures and proofs.
-        At the same time, we develop systems that empower <strong>LLMs</strong> to understand, explore, and construct formal proofs
-        step-by-step using knowledge graphs, vector databases, and intelligent tactic selection.
-      </p>
-    </section>
+  <section>
+    <h2>Summary</h2>
+    <p>Computer Engineering graduate with interests in artificial intelligence, mathematical reasoning, and formal methods. Experience in language models, automated theorem proving, and multi-agent systems, including Lean 4 for formal verification. Strong background in analytical thinking, abstraction, and mathematical problem solving.</p>
+  </section>
 
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-4 text-gray-700">What We’re Building</h2>
-      <ul class="list-disc pl-6 space-y-2 text-lg">
-        <li>A structured <strong>knowledge base</strong> of Lean tactics with detailed explanations and examples.</li>
-        <li>A <strong>graph-based system</strong> to model dependencies between mathematical concepts and tactics.</li>
-        <li>An <strong>LLM-driven proof assistant</strong> that queries the knowledge base and navigates proof states intelligently.</li>
-        <li>A workflow that enables rapid <strong>collaboration between human insight and machine automation</strong>.</li>
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">BSc in Computer Engineering</span>
+        <span class="entry-date">Sep 2021 – Oct 2025</span>
+      </div>
+      <div class="entry-sub">Amirkabir University of Technology, Tehran</div>
+      <ul>
+        <li>GPA: 18.11 / 20</li>
+        <li>Relevant coursework: Linear Algebra, Graph Theory, Theory of Machines and Languages, Computational Intelligence, Algorithm Design, Data Structures, Discrete Mathematics, Algorithmic Game Theory, Programming Languages</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-4 text-gray-700">Why This Matters</h2>
-      <p class="text-lg leading-relaxed">
-        Formal mathematics ensures complete rigor and verifiability, and LLMs offer scalable reasoning and exploration.
-        Together, they could revolutionize how we approach deep problems in math, logic, and theoretical computer science—
-        enabling discoveries, collaboration, and understanding at an unprecedented scale.
-      </p>
-    </section>
+  <section>
+    <h2>Research &amp; projects</h2>
+    <div>
+      <div class="entry">
+        <span class="entry-title">Bachelor thesis: Leveraging Language Models in Multi-Agent Systems for Formal Proof of Mathematical Problems</span>
+        <span class="links"><a href="https://uploadkon.ir/uploads/66da21_26BSc-Thesis.zip">Thesis document</a></span>
+        <ul>
+          <li>Designed a multi-agent framework for automated theorem proving using LLMs and Lean 4.</li>
+          <li>Implemented iterative feedback loops for proof correction, error analysis, and Mathlib retrieval.</li>
+          <li>Focused on automated reasoning, formal verification, and LLM-based problem solving.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <span class="entry-title">Reinforcement learning projects</span>
+        <span class="links">
+          <a href="https://github.com/harmonic259/snake-DQN">Snake DQN</a>
+          <a href="https://github.com/harmonic259/MDP-Frozenlake-gym">FrozenLake MDP</a>
+        </span>
+      </div>
+      <div class="entry">
+        <span class="entry-title">MiniCube Solver AI</span>
+        <span class="links"><a href="https://github.com/harmonic259/miniCube-solver">GitHub repository</a></span>
+      </div>
+      <div class="entry">
+        <span class="entry-title">Camera calibration</span>
+        <span class="links"><a href="https://github.com/harmonic259/camera-calibration">GitHub repository</a></span>
+      </div>
+      <div class="entry">
+        <span class="entry-title">Data preprocessing &amp; PCA</span>
+        <span class="links"><a href="https://github.com/harmonic259/data-process-PCA">GitHub repository</a></span>
+      </div>
+    </div>
+  </section>
 
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-4 text-gray-700">About the Author</h2>
-      <p class="text-lg leading-relaxed">
-        My name is Mohammad Amin, an undergraduate student at Amirkabir University with a passion for mathematical logic,
-        formal systems, and AI reasoning. I am building a system where Lean and LLMs work together to prove deep mathematical truths.
-      </p>
-    </section>
+  <section>
+    <h2>Experience</h2>
+    <div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Teaching Assistant</span>
+          <span class="entry-date">Feb 2024 – Present</span>
+        </div>
+        <div class="entry-sub">Amirkabir University of Technology, Tehran</div>
+        <ul>
+          <li><strong>Principles and Applications of AI (Dr. Javanmardi):</strong> Assisted students in reinforcement learning, MDPs, CSPs, and Bayesian networks through assignments and practical projects.</li>
+          <li><strong>Discrete Mathematics (Prof. Fallah):</strong> Supported coursework in logic, combinatorics, graph theory, and proof techniques.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Research Internship</span>
+          <span class="entry-date">Jul 2024 – Sep 2024</span>
+        </div>
+        <div class="entry-sub">Institute for Research in Fundamental Sciences (IPM), Tehran</div>
+        <ul>
+          <li>Worked on MRI image reconstruction and corruption removal using computer vision, FFT, and Monte Carlo Tree Search methods.</li>
+          <li>Explored optimization and algorithmic reasoning approaches connected to formal verification concepts.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Math Olympiad Instructor</span>
+          <span class="entry-date">Sep 2021 – Jan 2023</span>
+        </div>
+        <div class="entry-sub">Freelance, remote</div>
+        <ul>
+          <li>Taught geometry olympiad problem-solving techniques and mathematical reasoning.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <footer class="text-center text-gray-500 mt-20 text-sm">
-      © 2025 Mohammad Amin. All rights reserved.
-    </footer>
-  </main>
+  <section>
+    <h2>Awards</h2>
+    <dl>
+      <dt>Iran National Mathematical Olympiad</dt>
+      <dd>Silver Medal (2019, 2020)</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl>
+      <dt>Programming</dt><dd>Python, C/C++, Java</dd>
+      <dt>AI / ML</dt><dd>PyTorch, TensorFlow, Reinforcement Learning, Multi-Agent LLM Systems</dd>
+      <dt>Formal methods</dt><dd>Lean 4, SAT/FOL/SMT fundamentals</dd>
+      <dt>Mathematics</dt><dd>Linear Algebra, Graph Theory, Combinatorics, Discrete Mathematics</dd>
+      <dt>Languages</dt><dd>English (professional proficiency), Persian (native)</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Certificates</h2>
+    <dl>
+      <dt>Kaggle</dt>
+      <dd>Machine Learning, Deep Learning, Computer Vision</dd>
+      <dt>Neuromatch Academy</dt>
+      <dd><a href="https://portal.neuromatchacademy.org/certificate/143c37ed-7eb6-44a8-8a2e-ad187d639de6">Computational Neuroscience</a> (Jul 2024)</dd>
+    </dl>
+  </section>
+
+</main>
 </body>
 </html>
